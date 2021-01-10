@@ -2,13 +2,13 @@ body {
   text-align: center;
 }
 
-.container {
-  /* background-color: blue; */
-  width: 300px;
-  text-align: left;
+a {
+  color: white;
+  text-decoration: none;
 }
 
-#username {
+#conversation-link:hover {
+  color: black;
 }
 
 #profile-picture {
@@ -18,4 +18,11 @@ body {
 
 #about {
   margin-top: 30px;
+  text-align: left;
+}
+
+
+
+#save-button {
+  margin-top: 10px;
 }

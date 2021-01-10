@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swipe Cards</title>
+    <link rel="stylesheet" href="./styles/swipecards.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/common.css">
+    <script src="https://kit.fontawesome.com/085f1dec7b.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="tinder">
+      <div class="tinder--status">
+        <i class="fa fa-remove"></i>
+        <i class="fa fa-heart"></i>
+      </div>
+    
+      <div class="tinder--cards">
+        <% opinions.forEach(function(val,key) { %>
+          <div class="tinder--card" id="<%= key %>">
+          <img src="https://placeimg.com/600/300/people">
+          <h3><%= val.topic %></h3>
+        </div>
+        <% }); %>
+      </div>
+    
+      <div class="tinder--buttons">
+        <button id="nope"><i class="fa fa-remove"></i></button>
+        <button id="love"><i class="fa fa-heart"></i></button>
+      </div>
+    </div>
+
+    <footer id="foot"></footer>
+    <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+    <script src="scripts/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+    <script src="scripts/swipecards.js"></script>
+    <script type="module" src="./scripts/common-navbar.js"></script>
+  </body>
+</html>

@@ -3,11 +3,6 @@ body {
   background-color: #ededed;
 }
 
-.container {
-  /* background-color: blue; */
-  width: 40%;
-  text-align: left;
-}
 
 #stats {
   margin-top: 10px;
@@ -21,7 +16,7 @@ body {
 #header {
   text-align: center;
   background-color: blueviolet;
-  background-image: linear-gradient(to right, blueviolet , darkviolet);
+  background-image: linear-gradient(to right, rgb(159, 176, 255) , rgb(82, 137, 255));
   padding: 20px;
   color: white;
 }

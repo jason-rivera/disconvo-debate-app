@@ -54,6 +54,11 @@ allCards.forEach(function (el) {
     if (keep) {
       event.target.style.transform = '';
     } else {
+      var user = firebase.auth().currentUser
+      var userId = null;
+      if (user != null){
+        userId = user.uid;
+      }
       var endX = Math.max(Math.abs(event.velocityX) * moveOutWidth, moveOutWidth);
       var toX = event.deltaX > 0 ? endX : -endX;
       var endY = Math.abs(event.velocityY) * moveOutWidth;
@@ -62,9 +67,8 @@ allCards.forEach(function (el) {
       var yMulti = event.deltaY / 80;
       var rotate = xMulti * yMulti;
       event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';
-      var user = firebase.auth().currentUser;
       let _data = {
-        userId:user
+        userId:userId
       }
       if(love){
         console.log("love");
@@ -82,7 +86,7 @@ allCards.forEach(function (el) {
       else{
         console.log("hate");
         console.log(event.target.id);
-        fetch('/opinions/'+event.target.id+'/agree', {
+        fetch('/opinions/'+event.target.id+'/disagree', {
           method: "POST",
           body: JSON.stringify(_data),
           headers: {"Content-type": "application/json; charset=UTF-8"}

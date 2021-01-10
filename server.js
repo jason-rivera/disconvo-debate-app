@@ -3,7 +3,7 @@ const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 const firebase = require('firebase');
-
+const bodyParser=require('body-parser');
 const backend = require('./backend');
 
 var firebaseConfig = {
@@ -17,7 +17,12 @@ var firebaseConfig = {
     measurementId: "G-50DSSH0TT0"
 };
 
+//app.set('view engine', 'ejs');
+app.set('views', __dirname+'/views');
+app.engine('html',require('ejs').renderFile);
+app.set('view engine', 'html');
 app.use(express.static('static'));
+jsonParser = bodyParser.json();
 
 io.on('connection', (socket) => {
   console.log('a user connected');
@@ -33,23 +38,44 @@ http.listen(3000, () => {
   console.log('listening on *:3000');
 });
 
-app.post('/opinions/:opno/agree', function (req, res){
+app.get('/swipecards', function(req, res) {
+    var opinions = Opinions;
+    var hello = "hello!!!!!!!!";
+    res.render('swipecards.html', {opinions: Opinions, hello: hello});
+});
+
+app.get('/conversation/:roomno', function(req, res) {
+    var room = req.params.roomno;
+    res.render('conversation.html', {room: room});
+});
+
+app.get('/conversations/:userid', function(req, res) {
+    var conversations = Conversations[req.params.userid] ?? [];
+    res.render('conversation-list.html', {conversations: conversations});
+});
+
+
+app.post('/opinions/:opno/agree', jsonParser, function (req, res){
+  console.log(req.body.userId);
   opinion = getOpinion(req.params.opno);
   if (opinion != null){
-   convo = opinion.agree(req.user);
+   convo = opinion.agree(req.body.userId);
    if (convo != null){
      res.redirect('/conversation.html?'+convo.room);
+     return;
    }
   }
+  console.log(Conversations);
   res.send('OK');
 })
 
-app.post('/opinions/:opno/agree', function (req, res){
+app.post('/opinions/:opno/disagree', jsonParser, function (req, res){
   opinion = getOpinion(req.params.opno);
   if (opinion != null){
-   convo = opinion.disagree(req.user);
+   convo = opinion.disagree(req.body.userId);
    if (convo != null){
      res.redirect('/conversation.html?'+convo.room);
+     return;
    }
   }
   res.send('OK');

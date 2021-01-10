@@ -5,12 +5,23 @@
 
 #talk {
   margin-top: 30px;
+  text-align: center;
 }
 
 #sign-in-button {
   margin-top: 150px;
 }
 
-.container {
-  width: 300px;
+
+.to-other-page{
+  text-decoration: none;
+  color: gray;
+}
+
+#sign-in-button a{
+  color: white;
+}
+
+#disconvent {
+  width: 100%;
 }

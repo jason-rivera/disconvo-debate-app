@@ -2,8 +2,36 @@
   margin-top: 30px;
   text-align: center;
   font-weight: bold;
+  font-size: 1.7rem;
+}
+
+.container {
+  width: 300px;
 }
 
 body {
-  background-color: #7FD9FF;
+  background-color: white;
 }
+
+.container-fluid {
+  background-color: red;
+}
+
+.container-fluid a {
+  color: black;
+}
+
+.container-fluid a:hover {
+  color: white;
+}
+
+.navbar-brand {
+  font-size: 1.3rem;
+  padding: 5px 10px 5px 10px;
+}
+
+a:hover {
+  color: white;
+}
+
+
