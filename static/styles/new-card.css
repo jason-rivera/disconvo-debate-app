@@ -1,0 +1,29 @@
+.sub-header {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.container {
+  /* background-color: blue; */
+  width: 300px;
+  text-align: left;
+}
+
+#card-info {
+  margin-top: 30px;
+}
+
+.topics-title {
+  margin-top: 30px;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+#dominant-topics-buttons {
+  margin-top: 15px;
+  text-align: center;
+}
+
+#able-to-checkmark {
+  margin-top: 30px;
+}
