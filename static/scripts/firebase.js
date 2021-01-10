@@ -12,7 +12,9 @@ var app_fireBase = {};
         measurementId: "G-50DSSH0TT0"
     };
 
+
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     app_fireBase = firebase;
+
 })()
