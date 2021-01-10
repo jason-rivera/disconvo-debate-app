@@ -44,6 +44,16 @@ app.get('/swipecards', function(req, res) {
     res.render('swipecards.html', {opinions: Opinions, hello: hello});
 });
 
+app.get('/conversation/:roomno', function(req, res) {
+    var room = req.params.roomno;
+    res.render('conversation.html', {room: room});
+});
+
+app.get('/conversation-list/:userid', function(req, res) {
+    var conversations = Conversations[req.params.userid] ?? [];
+    res.render('conversation-list.html', {conversations: conversations});
+});
+
 
 app.post('/opinions/:opno/agree', jsonParser, function (req, res){
   console.log(req.body.userId);

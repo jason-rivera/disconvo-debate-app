@@ -37,8 +37,8 @@ Opinion.prototype.agree = function (agreed) {
 	this.agreed=agreed;
 	if (this.disagreed != null){
 			convo = new Conversation(this);
-			Conversations[this.agreed]=convo;
-			Conversations[this.disagreed]=convo;
+			Conversations[this.agreed]=[convo];
+			Conversations[this.disagreed]=[convo];
 			return convo;
 	}
 	else return null;
@@ -48,8 +48,8 @@ Opinion.prototype.disagree = function (disagreed) {
 	this.disagreed=disagreed;
 	if (this.agreed != null){
 			convo = new Conversation(this);
-			Conversations[this.agreed]=convo;
-			Conversations[this.disagreed]=convo;
+			Conversations[this.agreed]=[convo];
+			Conversations[this.disagreed]=[convo];
 			return convo;
 	}
 	else return null;

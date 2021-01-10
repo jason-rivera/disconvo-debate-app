@@ -12,7 +12,11 @@ form.addEventListener('submit', function(e) {
 		}
 });
 
-	socket.on('chat message', function(msg) {
+socket.on('connection', function(msg) {
+	socket.join(room);
+});
+
+socket.on('chat message', function(msg) {
 	var item = document.createElement('li');
 	item.textContent = msg;
 	messages.appendChild(item);
