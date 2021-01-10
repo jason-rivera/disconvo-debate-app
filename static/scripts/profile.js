@@ -20,6 +20,7 @@ function loadProfileInfo() {
         convoNumber = user.convoNumber;
         kudosNumber = user.kudosNumber;
         about = user.about;
+        interests = user.interests;
     }
 
 
