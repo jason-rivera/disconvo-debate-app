@@ -1,4 +1,13 @@
-body {
-  display: flex;
-  
+.logo {
+  text-align: center;
+  padding-top: 50px;
+}
+
+#sub-header {
+  text-align: center;
+  padding-top: 40px;
+}
+
+#sign-in-button {
+  margin-top: 150px;
 }
