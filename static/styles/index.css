@@ -15,3 +15,12 @@
 .container {
   width: 300px;
 }
+
+.to-other-page{
+  text-decoration: none;
+  color: gray;
+}
+
+#sign-in-button a{
+  color: white;
+}
