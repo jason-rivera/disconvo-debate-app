@@ -3,7 +3,7 @@ const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 const firebase = require('firebase');
-
+const bodyParser=require('body-parser');
 const backend = require('./backend');
 
 var firebaseConfig = {
@@ -22,8 +22,7 @@ app.set('views', __dirname+'/views');
 app.engine('html',require('ejs').renderFile);
 app.set('view engine', 'html');
 app.use(express.static('static'));
-
-
+jsonParser = bodyParser.json();
 
 io.on('connection', (socket) => {
   console.log('a user connected');
@@ -46,23 +45,27 @@ app.get('/swipecards', function(req, res) {
 });
 
 
-app.post('/opinions/:opno/agree', function (req, res){
+app.post('/opinions/:opno/agree', jsonParser, function (req, res){
+  console.log(req.body.userId);
   opinion = getOpinion(req.params.opno);
   if (opinion != null){
-   convo = opinion.agree(req.user);
+   convo = opinion.agree(req.body.userId);
    if (convo != null){
      res.redirect('/conversation.html?'+convo.room);
+     return;
    }
   }
+  console.log(Conversations);
   res.send('OK');
 })
 
-app.post('/opinions/:opno/agree', function (req, res){
+app.post('/opinions/:opno/disagree', jsonParser, function (req, res){
   opinion = getOpinion(req.params.opno);
   if (opinion != null){
-   convo = opinion.disagree(req.user);
+   convo = opinion.disagree(req.body.userId);
    if (convo != null){
      res.redirect('/conversation.html?'+convo.room);
+     return;
    }
   }
   res.send('OK');

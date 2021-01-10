@@ -18,6 +18,15 @@
 // })
 //to hell with that garbage
 
+function Conversation(opinion){
+	this.topic=opinion.topic;
+	this.agreed=opinion.agreed;
+	this.disagreed=opinion.disagreed;
+	this.room=Math.floor(Math.random()*256000).toString();
+}
+
+Conversations = {}
+
 function Opinion(topic){
 	this.topic=topic;
 	this.agreed=null;
@@ -28,6 +37,8 @@ Opinion.prototype.agree = function (agreed) {
 	this.agreed=agreed;
 	if (this.disagreed != null){
 			convo = new Conversation(this);
+			Conversations[this.agreed]=convo;
+			Conversations[this.disagreed]=convo;
 			return convo;
 	}
 	else return null;
@@ -37,6 +48,8 @@ Opinion.prototype.disagree = function (disagreed) {
 	this.disagreed=disagreed;
 	if (this.agreed != null){
 			convo = new Conversation(this);
+			Conversations[this.agreed]=convo;
+			Conversations[this.disagreed]=convo;
 			return convo;
 	}
 	else return null;
@@ -57,11 +70,4 @@ addOpinion = function(topic){
 // 	return snapshot;
 // }
 
-function Conversation(opinion){
-	this.topic=opinion.topic;
-	this.agreed=opinion.agreed;
-	this.disagreed=opinion.disagreed;
-	this.room=Math.floor(Math.random()*256000).toString();
-}
-
-module.exports = {Opinion, addOpinion, getOpinion,Opinions};
+module.exports = {Opinion, addOpinion, getOpinion, Opinions, Conversations};
