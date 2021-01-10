@@ -17,7 +17,13 @@ var firebaseConfig = {
     measurementId: "G-50DSSH0TT0"
 };
 
+//app.set('view engine', 'ejs');
+app.set('views', __dirname+'/views');
+app.engine('html',require('ejs').renderFile);
+app.set('view engine', 'html');
 app.use(express.static('static'));
+
+
 
 io.on('connection', (socket) => {
   console.log('a user connected');
@@ -32,6 +38,13 @@ io.on('connection', (socket) => {
 http.listen(3000, () => {
   console.log('listening on *:3000');
 });
+
+app.get('/swipecards', function(req, res) {
+    var opinions = Opinions;
+    var hello = "hello!!!!!!!!";
+    res.render('swipecards.html', {opinions: Opinions, hello: hello});
+});
+
 
 app.post('/opinions/:opno/agree', function (req, res){
   opinion = getOpinion(req.params.opno);

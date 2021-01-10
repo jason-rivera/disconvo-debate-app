@@ -42,7 +42,7 @@ Opinion.prototype.disagree = function (disagreed) {
 	else return null;
 }
 
-Opinions = [new Opinion("card2")];
+Opinions = [new Opinion("Spaghetti is a fruit."), new Opinion("Lethal Weapon 5 is a Christmas movie."), new Opinion("Social media is harmful to society.")];
 
 getOpinion = function(opNo){
 	return Opinions[opNo];
@@ -64,4 +64,4 @@ function Conversation(opinion){
 	this.room=Math.floor(Math.random()*256000).toString();
 }
 
-module.exports = {Opinion, addOpinion, getOpinion};
+module.exports = {Opinion, addOpinion, getOpinion,Opinions};

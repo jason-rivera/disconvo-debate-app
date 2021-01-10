@@ -14,31 +14,12 @@
       </div>
     
       <div class="tinder--cards">
-        <div class="tinder--card" id="card1">
+        <% opinions.forEach(function(val,key) { %>
+          <div class="tinder--card" id="<%= key %>">
           <img src="https://placeimg.com/600/300/people">
-          <h3>Demo card 1</h3>
-          <p>This is a demo for Tinder like swipe cards</p>
+          <h3><%= val.topic %></h3>
         </div>
-        <div class="tinder--card" id="card2">
-          <img src="https://placeimg.com/600/300/animals">
-          <h3>Demo card 2</h3>
-          <p>This is a demo for Tinder like swipe cards</p>
-        </div>
-        <div class="tinder--card" id="card3">
-          <img src="https://placeimg.com/600/300/nature">
-          <h3>Demo card 3</h3>
-          <p>This is a demo for Tinder like swipe cards</p>
-        </div>
-        <div class="tinder--card" id="card4">
-          <img src="https://placeimg.com/600/300/tech">
-          <h3>Demo card 4</h3>
-          <p>This is a demo for Tinder like swipe cards</p>
-        </div>
-        <div class="tinder--card" id="card5">
-          <img src="https://placeimg.com/600/300/arch">
-          <h3>Demo card 5</h3>
-          <p>This is a demo for Tinder like swipe cards</p>
-        </div>
+        <% }); %>
       </div>
     
       <div class="tinder--buttons">
