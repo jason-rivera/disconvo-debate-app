@@ -18,7 +18,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig)
 let database = firebase.database()
 
-testobj = {"hello": "muddah"};
+let testobj = {"hello": "muddah"};
 database.ref("test").set(testobj, function(error) {
     if (error) {
       // The write failed...
