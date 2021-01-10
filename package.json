@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Fanthoni/disagreeing_convo_webapp#readme",
   "dependencies": {
+    "hammerjs": "^2.0.8",
     "socket.io": "^3.0.5"
   },
   "devDependencies": {
