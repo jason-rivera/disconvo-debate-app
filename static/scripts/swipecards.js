@@ -42,6 +42,7 @@ allCards.forEach(function (el) {
 
   hammertime.on('panend', function (event) {
     el.classList.remove('moving');
+    var love = tinderContainer.classList.contains('tinder_love');      
     tinderContainer.classList.remove('tinder_love');
     tinderContainer.classList.remove('tinder_nope');
 
@@ -60,8 +61,36 @@ allCards.forEach(function (el) {
       var xMulti = event.deltaX * 0.03;
       var yMulti = event.deltaY / 80;
       var rotate = xMulti * yMulti;
-
       event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';
+      var user = firebase.auth().currentUser;
+      let _data = {
+        userId:user
+      }
+      if(love){
+        console.log("love");
+        console.log(event.target.id);
+        // data to be sent to the POST request
+        fetch('/opinions/'+event.target.id+'/agree', {
+          method: "POST",
+          body: JSON.stringify(_data),
+          headers: {"Content-type": "application/json; charset=UTF-8"}
+        })
+        .then(response => response.json()) 
+        .then(json => console.log(json))
+        .catch(err => console.log(err));
+      }
+      else{
+        console.log("hate");
+        console.log(event.target.id);
+        fetch('/opinions/'+event.target.id+'/agree', {
+          method: "POST",
+          body: JSON.stringify(_data),
+          headers: {"Content-type": "application/json; charset=UTF-8"}
+        })
+        .then(response => response.json()) 
+        .then(json => console.log(json))
+        .catch(err => console.log(err));
+      }
       initCards();
     }
   });
@@ -85,7 +114,6 @@ function createButtonListener(love) {
     }
 
     initCards();
-
     event.preventDefault();
   };
 }

@@ -4,6 +4,8 @@ const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 const firebase = require('firebase');
 
+const backend = require('./backend');
+
 var firebaseConfig = {
     apiKey: "AIzaSyD5h34c52OAQPx8uzVdCYITGT4jAZLxECQ",
     authDomain: "disagreement-app.firebaseapp.com",
@@ -14,25 +16,6 @@ var firebaseConfig = {
     appId: "1:305406680698:web:288a89b920eb88db9825c3",
     measurementId: "G-50DSSH0TT0"
 };
-
-firebase.initializeApp(firebaseConfig)
-let database = firebase.database()
-
-testobj = {"hello": "muddah"};
-database.ref("test").set(testobj, function(error) {
-    if (error) {
-      // The write failed...
-      console.log("Failed with error: " + error)
-    } else {
-      // The write was successful...
-      console.log("success")
-    }
-})
-
-database.ref('test').once('value')
-.then(function(snapshot) {
-    console.log( snapshot.val() )
-})
 
 app.use(express.static('static'));
 
@@ -50,6 +33,27 @@ http.listen(3000, () => {
   console.log('listening on *:3000');
 });
 
+app.post('/opinions/:opno/agree', function (req, res){
+  opinion = getOpinion(req.params.opno);
+  if (opinion != null){
+   convo = opinion.agree(req.user);
+   if (convo != null){
+     res.redirect('/conversation.html?'+convo.room);
+   }
+  }
+  res.send('OK');
+})
+
+app.post('/opinions/:opno/agree', function (req, res){
+  opinion = getOpinion(req.params.opno);
+  if (opinion != null){
+   convo = opinion.disagree(req.user);
+   if (convo != null){
+     res.redirect('/conversation.html?'+convo.room);
+   }
+  }
+  res.send('OK');
+})
 
 // const io = require("socket.io")(3000, {
 //     cors:{
