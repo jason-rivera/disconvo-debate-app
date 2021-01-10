@@ -4,6 +4,10 @@
   font-weight: bold;
 }
 
+.container {
+  width: 300px;
+}
+
 body {
   background-color: white;
 }
@@ -25,3 +29,6 @@ body {
   padding: 5px 10px 5px 10px;
 }
 
+a:hover {
+  color: white;
+}
