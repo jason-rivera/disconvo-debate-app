@@ -1,0 +1,25 @@
+{
+  "name": "disagreeing_convo_webapp",
+  "version": "1.0.0",
+  "description": "A webapp where people can have a disagreeing conversation against each other.",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fanthoni/disagreeing_convo_webapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fanthoni/disagreeing_convo_webapp/issues"
+  },
+  "homepage": "https://github.com/Fanthoni/disagreeing_convo_webapp#readme",
+  "dependencies": {
+    "socket.io": "^3.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
