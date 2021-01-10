@@ -11,9 +11,6 @@
   margin-top: 150px;
 }
 
-.container {
-  width: 300px;
-}
 
 .to-other-page{
   text-decoration: none;
@@ -22,4 +19,8 @@
 
 #sign-in-button a{
   color: white;
+}
+
+#disconvent {
+  width: 100%;
 }

@@ -3,11 +3,6 @@ body {
   background-color: #ededed;
 }
 
-.container {
-  /* background-color: blue; */
-  width: 40%;
-  text-align: left;
-}
 
 #stats {
   margin-top: 10px;

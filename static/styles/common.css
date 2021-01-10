@@ -4,7 +4,33 @@
   font-weight: bold;
 }
 
-body {
-  background-color: #7FD9FF;
+.container {
+  width: 300px;
 }
+
+body {
+  background-color: white;
+}
+
+.container-fluid {
+  background-color: red;
+}
+
+.container-fluid a {
+  color: black;
+}
+
+.container-fluid a:hover {
+  color: white;
+}
+
+.navbar-brand {
+  font-size: 1.3rem;
+  padding: 5px 10px 5px 10px;
+}
+
+a:hover {
+  color: white;
+}
+
 
