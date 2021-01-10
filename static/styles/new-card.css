@@ -1,12 +1,21 @@
 
 
+.btn-check {
+  margin-top: 10px;
+}
+
 #card-info {
   margin-top: 30px;
 }
 
+textarea {
+  width: 100%;
+  border-radius: 5px;
+  resize: none;
+}
+
 .topics-title {
   margin-top: 30px;
-  font-size: 0.8rem;
   text-align: left;
 }
 
