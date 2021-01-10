@@ -1,31 +1,74 @@
 body {
   text-align: center;
+  background-color: #ededed;
 }
 
 .container {
   /* background-color: blue; */
-  width: 300px;
+  width: 40%;
   text-align: left;
 }
 
-#username {
+#stats {
+  margin-top: 10px;
+  display: flex;
   text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#header {
+  text-align: center;
+  background-color: blueviolet;
+  background-image: linear-gradient(to right, blueviolet , darkviolet);
+  padding: 20px;
+  color: white;
+}
+
+#header a {
+  text-decoration: none;
+  color: white;
+}
+
+#username {
   margin-top: 30px;
 }
+
+#infoBox {
+  margin-top: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+#interests span {
+  padding: 5px;
+  background-color: #efefef;
+  display: inline-block;
+  margin: 5px 10px 5px 0px;
+}
+
 #profile-picture {
-  text-align: center;
   margin-top: 10px;
 }
 
-#num-conversations {
-  margin-top: 100px;
+#profile-picture img {
+  border-radius: 100%;
+  margin: auto;
+  height: 200px;
+  width: 200px;
+  background-color: white;
 }
 
-#interests {
-  margin-top: 30px;
+
+#interests, #beliefs {
+  margin-top: 10px;
 }
 
-#beliefs {
-  margin-top: 30px;
+@media only screen and (max-width: 640px){
+  .container {
+    width: 80%;
+  }
 }
-
