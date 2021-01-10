@@ -49,7 +49,7 @@ app.get('/conversation/:roomno', function(req, res) {
     res.render('conversation.html', {room: room});
 });
 
-app.get('/conversation-list/:userid', function(req, res) {
+app.get('/conversations/:userid', function(req, res) {
     var conversations = Conversations[req.params.userid] ?? [];
     res.render('conversation-list.html', {conversations: conversations});
 });

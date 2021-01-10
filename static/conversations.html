@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+    <script src="/scripts/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+    <script>
+      var user = firebase.auth().currentUser
+      var userId = null;
+      if (user != null){
+        userId = user.uid;
+      }
+      window.location.replace(`/conversations/${userId}`);
+    </script>
+</html>
