@@ -1,0 +1,19 @@
+.sub-header {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.container {
+  /* background-color: blue; */
+  width: 300px;
+  text-align: left;
+}
+
+.end-content {
+  margin-top: 100px;
+  text-align: center;
+}
+
+#end-buttons {
+  margin-top: 50px;
+}

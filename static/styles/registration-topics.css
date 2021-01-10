@@ -1,0 +1,24 @@
+.sub-header {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.container {
+  width: 300px;
+  text-align: center;
+}
+
+.topics-title {
+  margin-top: 30px;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+#dominant-topics-buttons {
+  margin-top: 15px;
+}
+
+#next-button {
+  margin-top: 30px;
+  width: 100%;
+}
