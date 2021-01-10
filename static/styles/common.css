@@ -1,4 +1,9 @@
 .sub-header {
   margin-top: 30px;
   text-align: center;
+  font-weight: bold;
+}
+
+body {
+  background-color: #7FD9FF;
 }
