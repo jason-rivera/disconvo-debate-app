@@ -9,23 +9,29 @@
   </head>
   <body>
     <div id="sub-header">This is my login information:</div>
+    <div class="container">
       <form>
-        <div class="mb-3">
+        <div class="mb-3 d-grid gap-2 col-6 mx-auto">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
-        <div class="mb-3">
+        <div class="mb-3 d-grid gap-2 col-6 mx-auto">
           <label for="exampleInputPassword1" class="form-label">Password</label>
           <input type="password" class="form-control" id="exampleInputPassword1">
         </div>
-        <div class="mb-3 form-check">
+        <div class="mb-3 d-grid gap-2 col-6 mx-auto">
+          <label for="exampleInputPassword2" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword2">
+        </div>
+        <div class="mb-3 form-check col-6 mx-auto">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">I am over 18.</label>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button id="sign-in-button" class="btn btn-secondary" type="button">Sign In</button>
+        </div>
       </form>
-    <div class="login-info">
-      
     </div>
+
   </body>
 </html>
