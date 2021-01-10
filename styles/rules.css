@@ -1,0 +1,19 @@
+.container {
+  /* background-color: blue; */
+  width: 300px;
+  text-align: left;
+}
+
+#rules {
+  margin-top: 30px;
+  text-align: center;
+}
+
+#rules-content {
+  margin-top: 70px;
+}
+
+#question {
+  margin-top: 30px;
+  text-align: center;
+}
