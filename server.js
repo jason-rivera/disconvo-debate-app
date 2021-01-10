@@ -13,6 +13,22 @@ app.get('/conversation', (req, res) => {
   res.sendFile(__dirname + '/conversation.html');
 });
 
+app.get('/register', (req, res) => {
+    res.sendFile(__dirname + '/registration.html')
+});
+
+app.get('/profile', (req, res) => {
+    res.sendFile(__dirname + '/profile.html')
+});
+
+app.get('/rules', (req, res) => {
+    res.sendFile(__dirname + '/rules.html')
+});
+
+app.get('/dislikes', (req, res) => {
+    res.sendFile(__dirname + '/dislikes.html')
+})
+
 io.on('connection', (socket) => {
   console.log('a user connected');
   socket.on('disconnect', () => {
