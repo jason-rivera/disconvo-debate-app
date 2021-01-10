@@ -7,52 +7,58 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/new-card.css">
     <link rel="stylesheet" href="./styles/common.css">
+    <script src ="./scripts/new_card.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   </head>
   <body>
     <div class="container">
       <div class="sub-header">Write A New Card</div>
 
-      <div id="card-info" class="form-group">
-        <label for="about-content">Card Text (140 characters left)</label>
-        <textarea class="form-control" id="about-content" rows="3"></textarea>
+      <form onsubmit="customSubmit()" name='newCard'>
+
+      <div ng-app="" id="card-info">
+        <label>Card Text - {{140 - opinion.length}} character(s) left</label>
+        <textarea ng-model="opinion" name="opinion" maxlength="140" rows = "5" placeholder="Enter your opinion here"></textarea>
+
       </div>
 
 
-      <div class="topics-title">Card Category</div>
-      <div id="dominant-topics-buttons" role="group" aria-label="Basic checkbox toggle button group">
-        <input type="checkbox" class="btn-check" id="btncheck1">
-        <label class="btn btn-outline-secondary" for="btncheck1">Checkbox 1</label>
+      <div class="topics-title"><label>Card Category</label></div>
+      <div id="dominant-topics-buttons" role="group" aria-label="Basic toggle button group">
+        <input type="radio" class="btn-check" value = "Sports" name="category" id="btncheck1">
+        <label class="btn btn-outline-secondary" for="btncheck1">Sports</label>
       
-        <input type="checkbox" class="btn-check" id="btncheck2">
-        <label class="btn btn-outline-secondary" for="btncheck2">Checkbox 2</label>
+        <input type="radio" class="btn-check" value = "Politics" name="category"  id="btncheck2">
+        <label class="btn btn-outline-secondary" for="btncheck2">Politics</label>
       
-        <input type="checkbox" class="btn-check" id="btncheck3">
-        <label class="btn btn-outline-secondary" for="btncheck3">Checkbox 3</label>
+        <input type="radio" class="btn-check" value = "Religion" name="category"  id="btncheck3">
+        <label class="btn btn-outline-secondary" for="btncheck3">Religion</label>
   
-        <input type="checkbox" class="btn-check" id="btncheck4">
-        <label class="btn btn-outline-secondary" for="btncheck4">Checkbox 4</label>
+        <input type="radio" class="btn-check" name="category" value="COVID-19" id="btncheck4">
+        <label class="btn btn-outline-secondary" for="btncheck4">COVID-19</label>
   
-        <input type="checkbox" class="btn-check" id="btncheck5">
-        <label class="btn btn-outline-secondary" for="btncheck5">Checkbox 5</label>
+        <input type="radio" class="btn-check" name="category" value="Food" id="btncheck5">
+        <label class="btn btn-outline-secondary" for="btncheck5">Food</label>
   
-        <input type="checkbox" class="btn-check" id="btncheck6">
-        <label class="btn btn-outline-secondary" for="btncheck6">Checkbox 6</label>
+        <input type="radio" class="btn-check" name="category" value="Feminism" id="btncheck6">
+        <label class="btn btn-outline-secondary" for="btncheck6">Feminism</label>
   
-        <input type="checkbox" class="btn-check" id="btncheck7">
-        <label class="btn btn-outline-secondary" for="btncheck7">Checkbox 7</label>
+        <input type="radio" class="btn-check" name="category" value="Race Issues" id="btncheck7">
+        <label class="btn btn-outline-secondary" for="btncheck7">Race Issues</label>
   
-        <input type="checkbox" class="btn-check" id="btncheck8">
-        <label class="btn btn-outline-secondary" for="btncheck8">Checkbox 8</label>
+        <input type="radio" class="btn-check" name="category" value="Donald Trump" id="btncheck8">
+        <label class="btn btn-outline-secondary" for="btncheck8">Donald Trump</label>
       </div>
 
       <div id="able-to-checkmark" class="mb-3 form-check mx-auto">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">I am to have a conversation with those who reply to me,. I am also able to do so within three hours of posting.</label>
+        <input type="checkbox" class="form-check-input" id="declaration">
+        <label class="form-check-label" for="declaration">I am to have a conversation with those who reply to me. I am also able to do so within three hours of posting.</label>
       </div>
 
       <div class="d-grid gap-2 mx-auto">
-        <button id="submit-card-button" class="btn btn-secondary" type="button">Submit Card</button>
+        <button type="submit" class="btn btn-secondary">Submit Card</button>
       </div>
+      </form>
 
     </div>
 
