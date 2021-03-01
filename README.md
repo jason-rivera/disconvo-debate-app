@@ -1,3 +1,3 @@
-# disagreeing_convo_webapp
+# disconvo-debate-app
 
 A webapp where people can have a disagreeing conversation against each other.
